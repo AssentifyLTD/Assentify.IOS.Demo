@@ -1,0 +1,44 @@
+import UIKit
+import CoreImage
+import MobileCoreServices
+func convertPixelBufferToBase64(pixelBuffer: CVPixelBuffer) -> String? {
+    let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
+    let context = CIContext()
+    guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else {
+        return nil
+    }
+    let uiImage = UIImage(cgImage: cgImage)
+    
+    guard let pngData = uiImage.pngData() else {
+        return nil
+    }
+    
+    print("Image size Before jpeg2000DataLossless : \(pngData.count) bytes")
+    
+    guard let imageData = uiImage.jpeg2000DataLossless() else {
+        return nil
+    }
+    
+    print("Image size After jpeg2000DataLossless :  \(imageData.count) bytes")
+    
+    // print size here
+    
+    let base64String = imageData.base64EncodedString()
+    return base64String
+}
+
+extension UIImage {
+    func jpeg2000DataLossless() -> Data? {
+        guard let cgImage = self.cgImage else {
+            return nil
+        }
+        let mutableData = NSMutableData()
+        let imageDestination = CGImageDestinationCreateWithData(mutableData, kUTTypeJPEG2000, 1, nil)!
+        let options: NSDictionary = [
+            kCGImageDestinationLossyCompressionQuality:0.7
+        ]
+        CGImageDestinationAddImage(imageDestination, cgImage, options)
+        CGImageDestinationFinalize(imageDestination)
+        return mutableData as Data
+    }
+}

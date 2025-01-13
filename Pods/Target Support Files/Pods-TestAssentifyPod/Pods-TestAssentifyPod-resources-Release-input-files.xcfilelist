@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-TestAssentifyPod/Pods-TestAssentifyPod-resources.sh
+${PODS_ROOT}/AssentifySdk/best-fp16.tflite
+${PODS_ROOT}/AssentifySdk/classes.txt
+${PODS_ROOT}/AssentifySdk/card_background.svg
+${PODS_ROOT}/AssentifySdk/face_background.svg
+${PODS_ROOT}/AssentifySdk/transmitting_background.svg
+${PODS_ROOT}/AssentifySdk/check-liveness.tflite
+${PODS_CONFIGURATION_BUILD_DIR}/TensorFlowLiteC/TensorFlowLiteC.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/TensorFlowLiteSwift/TensorFlowLite.bundle
