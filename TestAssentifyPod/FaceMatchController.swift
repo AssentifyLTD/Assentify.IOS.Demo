@@ -137,7 +137,11 @@ class FaceMatchController: UIViewController ,FaceMatchDelegate
     }
     
     
-    func onEnvironmentalConditionsChange(brightness: Double, motion: MotionType) {
+    func onEnvironmentalConditionsChange(brightnessEvents: BrightnessEvents,
+                                              motion: MotionType,
+                                              faceEvents: FaceEvents,
+                                              zoom: ZoomType) {
+        print("onEnvironmentalConditionsChange" , faceEvents.rawValue)
     }
     
  
