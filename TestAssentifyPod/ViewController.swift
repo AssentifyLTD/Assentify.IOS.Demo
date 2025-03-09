@@ -14,10 +14,6 @@ class ViewController: UIViewController , AssentifySdkDelegate{
 
     let environmentalConditions = EnvironmentalConditions(
         enableDetect: true, enableGuide: true,
-          BRIGHTNESS_HIGH_THRESHOLD: 500.0,
-          BRIGHTNESS_LOW_THRESHOLD: 0.0,
-          PREDICTION_LOW_PERCENTAGE: 50.0,
-          PREDICTION_HIGH_PERCENTAGE: 100.0,
           CustomColor: "#FFC400",
           HoldHandColor: "#FFC400"
       )
@@ -33,15 +29,15 @@ class ViewController: UIViewController , AssentifySdkDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.assentifySdk = AssentifySdk(
-                apiKey: "",
-                tenantIdentifier: "",
-                interaction: "",
+                apiKey: "7UXZBSN2CeGxamNnp9CluLJn7Bb55lJo2SjXmXqiFULyM245nZXGGQvs956Fy5a5s1KoC4aMp5RXju8w",
+                tenantIdentifier: "4232e33b-1a90-4b74-94a4-08dcab07bc4d",
+                interaction: "64F110E3B984807D8E4FF14D50A5FEF26BC368F2E5C8CEEE22799EB4ECE87194",
                 environmentalConditions: self.environmentalConditions,
                 assentifySdkDelegate: self,
                 processMrz: true,
                 storeCapturedDocument: true,
-                performLivenessDocument:false,
-                performLivenessFace: false,
+                performLivenessDocument:true,
+                performLivenessFace: true,
                 saveCapturedVideoID: true,
                 saveCapturedVideoFace: true
             )

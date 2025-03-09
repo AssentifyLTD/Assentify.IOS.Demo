@@ -144,8 +144,10 @@ class PassportController: UIViewController ,ScanPassportDelegate
     func onUploadFailed(dataModel: RemoteProcessingModel) {
     }
     
-    func onEnvironmentalConditionsChange(brightness: Double, motion: MotionType, zoom: ZoomType) {
-        
+    func onEnvironmentalConditionsChange(   brightnessEvents: BrightnessEvents,
+                                            motion: MotionType,
+                                            zoom: ZoomType) {
+        print("onEnvironmentalConditionsChange" , brightnessEvents.rawValue)
     }
  
    
