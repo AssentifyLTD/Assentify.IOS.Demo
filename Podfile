@@ -5,7 +5,7 @@ target 'TestAssentifyPod' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'AssentifySdk' // 0.0.47
+  pod 'AssentifySdk' // 0.0.48
   
   # Pods for TestAssentifyPod
 
