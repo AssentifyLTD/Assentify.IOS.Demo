@@ -143,6 +143,12 @@ class FaceMatchController: UIViewController ,FaceMatchDelegate
                                               zoom: ZoomType) {
         print("onEnvironmentalConditionsChange" , faceEvents.rawValue)
     }
+
+     func onCurrentLiveMoveChange(
+       activeLiveEvents: ActiveLiveEvents
+    ){
+         print("onCurrentLiveMoveChange" , activeLiveEvents.rawValue) 
+    }
     
  
     func imageToBase64(from url: URL, completion: @escaping (String?) -> Void) {
